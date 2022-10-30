@@ -27,7 +27,7 @@ public class MainListen {
             int right = stack.pop();
             int left = stack.pop();
             int result;
-            if (ctx.op.getType() == CalculatorParser.MUL) {
+            if (ctx.op.getType() == CalculatorParser.TIMES) {
                 result = left * right;
             } else {
                 result = left / right;
@@ -40,7 +40,7 @@ public class MainListen {
             int right = stack.pop();
             int left = stack.pop();
             int result;
-            if (ctx.op.getType() == CalculatorParser.ADD) {
+            if (ctx.op.getType() == CalculatorParser.PLUS) {
                 result = left + right;
             } else {
                 result = left - right;
@@ -59,8 +59,8 @@ public class MainListen {
         if ( args.length>0 ) inputFile = args[0];
         InputStream is = System.in;
         if ( inputFile!=null ) is = new FileInputStream(inputFile);
-        ANTLRInputStream input = new ANTLRInputStream(is);
-        CalculatorLexer lexer = new CalculatorLexer(input);
+        CharStream charStreams = CharStreams.fromStream(is);
+        CalculatorLexer lexer = new CalculatorLexer(charStreams);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         //System.out.println(tokens.getText());
 

@@ -6,8 +6,9 @@ expr: op=('*'|'/') expr expr # MulDiv
     ;
 
 INT: [0-9]+ ;
-MUL: '*' ;
+DOT: '.';
+TIMES: '*' ;
 DIV: '/' ;
-ADD: '+' ;
-SUB: '-' ;
+PLUS: '+' ;
+MINUS: '-' ;
 WS : [ \t\r\n]+ -> skip ;

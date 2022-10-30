@@ -1,9 +1,11 @@
 # Exec
-    rm Calculator*.js Calculator*.java *.tokens *.class
+    rm Calculator*.java *.tokens *.class
     java -jar ./antlr-4.11.1-complete.jar -no-listener -visitor Calculator.g4 
     java -jar ./antlr-4.11.1-complete.jar Calculator.g4 
-    
-    java -cp .:antlr-4.11.1-complete.jar org.antlr.v4.gui.TestRig Calculator tokens -tree example
+    javac -cp ./antlr-4.11.1-complete.jar Calculator*.java MainVisit.java
+    javac -cp ./antlr-4.11.1-complete.jar Calculator*.java MainListen.java
+
+    java -cp .:antlr-4.11.1-complete.jar org.antlr.v4.gui.TestRig Calculator tokens -tree example.txt
 
 
 
