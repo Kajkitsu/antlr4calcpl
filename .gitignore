@@ -6,3 +6,5 @@ node_modules/
 
 # Project exclude paths
 /out/
+/CalculatorLexer.interp
+/Calculator.interp
